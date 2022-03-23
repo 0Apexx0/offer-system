@@ -40,7 +40,11 @@ module.exports.claimProduct = async (req, res)=>{
     
     let product = await Product.findOne({ id : req.body.id});
     if(product){
-    
+        let claimByUser = await Claim.findOne({ claimBy : req.body.claimBy , id : req.body.id });
+        if(claimByUser){
+            req.flash('error' , 'already claimed by you');
+            return res.redirect('back');
+        }
         let claim = await Claim.create({
             id: req.body.id ,
             title: req.body.title,
