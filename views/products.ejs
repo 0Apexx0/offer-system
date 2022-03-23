@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="../assets/css/login.css" />
+<div class="container d-flex justify-content-center mt-2">
+    <a class="btn btn-outline-dark" href="/user/all-offer/?uid=<%= user%>">Go back</a>
+    <a class=" btn btn-outline-dark mx-1" href="/user/signout">signout</a>
+  
+  </div>
+<div class="container">
+    <a class=" btn btn-outline-light" href="/user/signout">signout</a>
+
+</div>
+<div class="container text-center">
+
+    <img class="card-img-top w-25" src='<%= product.image %>' alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= product.title%>
+        </h5>
+        <p class="card-text">
+            <%= product.description %>
+            
+        </p>
+        <form action="/product/claim-product" method="POST">
+            <input name="id" type="text" class="form-control" value="<%=product.id%>" hidden/>
+            <input name="title" type="text" class="form-control"  value="<%=product.title%>" hidden/>
+            <input name="description" type="text" class="form-control"  value="<%=product.description%>" hidden />
+            <input name="image" type="text" class="form-control"  value="<%=product.image%>" hidden/>
+            <input name="claimBy" type="text" class="form-control"  value="<%= user %>" hidden/>
+            <input name="claimedProduct" type="text" class="form-control"  value="<%= product._id %>" hidden/>
+            <input class="btn btn-warning" type="submit" value="Claim offer" />
+            
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <div class="login_container container">
+    <div>
+        <h4 class="display-4">Add product</h4>
+    </div>
+    <hr>
+    <form action="/product/add" method="POST">
+        <div class="form_container">
+            <div class="form-floating mb-3">
+                <input name="id" type="text" class="form-control" placeholder="id" required />
+                <label for="floatingInput">Id</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input name="title" type="text" class="form-control" placeholder="title" required />
+                <label for="floatingInput">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="description" type="text" class="form-control" placeholder="description" required />
+                <label for="floatingPassword">description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="image" type="text" class="form-control" placeholder="image"
+                    required />
+                <label for="floatingPassword">image</label>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto form_button">
+                <input class="btn btn-primary" type="submit" value="Sign UP" />
+            </div>
+            <div class="form_link">
+                <p>
+                    Have an account?
+                    <a href="/user/login" class="link-info">Login in now</a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div> -->

@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center mt-2">
+  <a class="btn btn-outline-dark" href="/user/all-offer/?uid=<%= user%>">Go back</a>
+  <a class=" btn btn-outline-dark mx-1" href="/user/signout">signout</a>
+
+</div>
+<div class="container d-flex justify-content-evenly flex-wrap mt-3 ">
+  <% for(p of product){ %>
+
+  <div class="card my-3" style="width: 18rem;">
+    <img class="card-img-top w-50 h-25 mb-5" src='<%= p.image %>' alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title mt-1">
+        <%= p.title%>
+        
+      </h5>
+      <p class="card-text h-25 overflow-hidden">
+        <%= p.description %>
+      </p>
+     
+                <a href="/product/claim/?id=<%= p.id %>&uid=<%= user%>" class="btn btn-warning">Claim offer</a>
+                <a href="/product/claim/?id=<%= p.id %>&uid=<%= user%>" class="btn btn-outline-warning">Learn More</a>
+    </div>
+  </div>
+  <% } %>
+  <!-- <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+  
+</div>
