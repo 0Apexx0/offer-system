@@ -38,3 +38,7 @@ a page showing some offer to be claimed by user
 ### api : https://documenter.getpostman.com/view/19046380/UVsSNig6
 
 
+## Note
+
+- layout.ejs show some error(due to usage of noty flash message there) but it will work fine. there is no issue with it 
+
