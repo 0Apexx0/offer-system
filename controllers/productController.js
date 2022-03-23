@@ -4,28 +4,9 @@ const Claim = require('../models/claim-offer');
 const User = require('../models/user');
 
 
-module.exports.addProduct = (req, res)=>{
-    Product.create({
-        id: req.body.id ,
-        title: req.body.title,
-    
-        description: req.body.description,
-        image: req.body.image
-    }, (err , product)=>{
-        if(err){console.log(err); return;}
-        console.log(product);
-        res.status(200).send(product);
-    })
-    return res.render('products');
-}
-module.exports.addProductPage = (req, res)=>{
-    Product.find({},)
-    return res.render('products');
-}
 
+// fetch claim product page
 module.exports.claimProductPage = async (req, res)=>{
-     
-
     let product = await Product.findOne({ id : req.query.id});
     
     return res.render('products' ,{
@@ -33,6 +14,9 @@ module.exports.claimProductPage = async (req, res)=>{
         user : req.query.uid
     });
 }
+
+
+// claiming any offer on product
 module.exports.claimProduct = async (req, res)=>{
 
     

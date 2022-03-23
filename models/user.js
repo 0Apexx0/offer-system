@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const { claimProduct } = require('../controllers/productController');
 
+// schema
 const userSchema = new mongoose.Schema({
     name : {
         type : String,
@@ -26,6 +26,7 @@ const userSchema = new mongoose.Schema({
     timestamps : true 
 })
 
+// models
 const User =  mongoose.model('User' , userSchema);
 
 module.exports = User;

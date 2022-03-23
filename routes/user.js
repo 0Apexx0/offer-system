@@ -21,6 +21,7 @@ router.post(
     userController.createSession
 );
 
+// fetching all the products on the homepage
 router.get('/all-offer' , userController.allOffer)
 
 module.exports = router;

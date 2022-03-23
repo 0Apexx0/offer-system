@@ -1,14 +1,17 @@
-const axios = require('axios');
+
 const Product = require('../models/products');
+const User = require("../models/user");
+
+
+// fetch signup page
 module.exports.home = (req, res)=>{
     return res.render('signup');
 }
 
 
-const User = require("../models/user");
 
 
-
+// fetch login page
 module.exports.login = async function (req, res) {
   if (!req.isAuthenticated()) {
     return res.render("login");
@@ -17,6 +20,8 @@ module.exports.login = async function (req, res) {
   return res.redirect("/");
 };
 
+
+// signing up
 module.exports.signup = function (req, res) {
   if (!req.isAuthenticated()) {
    
@@ -69,7 +74,7 @@ module.exports.deleteSession = function (req, res) {
   return res.redirect("/");
 };
 
-
+// fetching all the offers in the homepage
 module.exports.allOffer = async (req , res)=>{
     let product = await Product.find({});
     if (req.xhr){

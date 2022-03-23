@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// schema
 const claimSchema = new mongoose.Schema({
     id: Number ,
     title: String,
@@ -15,6 +16,7 @@ const claimSchema = new mongoose.Schema({
     }
 })
 
+// model
 const Claim = mongoose.model('Claim' , claimSchema);
 
 module.exports = Claim ;

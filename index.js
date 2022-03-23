@@ -11,6 +11,7 @@ const passportLocal = require('./config/passport-local-strategy');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
+// json
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -25,6 +26,7 @@ app.use(expressLayout);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
+// session
 app.use(
     session({
       name: "offer-system",
@@ -52,6 +54,8 @@ app.set('views' , './views');
 // add routes path
 app.use('/' , require('./routes'));
 
+
+// connecting to the server
 app.listen(port , (err)=>{
     if(err){console.log('error in creating server', err); return;}
     console.log(`connect to the server on http://localhost:${port}`);
