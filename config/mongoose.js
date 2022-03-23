@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const dbUrl = 'mongodb://localhost/offer_Db';
+const dbUrl = 'mongodb+srv://aditya:anshu@cluster0.xisze.mongodb.net/offer_db';
 
 mongoose.connect(dbUrl);
 
