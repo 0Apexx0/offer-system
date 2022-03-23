@@ -1,19 +1,43 @@
-<div class="container d-flex justify-content-center mt-2">
-  <a class="btn btn-outline-dark" href="/user/all-offer/?uid=<%= user%>">Go back</a>
-  <a class=" btn btn-outline-dark mx-1" href="/user/signout">signout</a>
-
+<div class="alert alert-warning" role="alert">
+  <h4 class="text-warning">
+    ICICI Bank Rubyyx Vise Credit Card
+  </h4>
+</div>
+<div class="container  d-flex justify-content-center mt-2 ">
+   <div class="cashback mx-1 container bg-primary rounded ">
+      <h3  class="text-white">
+        $3000
+      </h3>
+      <h6 class="text-white">
+        Total Cashback Earned
+      </h6>
+   </div>
+   <div class="points mx-1 container bg-danger rounded">
+      <h3  class="text-white">$3000</h3>
+      <h6 class="text-white">
+        Total Points Earned
+      </h6>
+   </div>
 </div>
 <div class="container d-flex justify-content-evenly flex-wrap mt-3 ">
+  <div class="container">
+    <h4 class="text-warning border-bottom w-25 m-auto">
+      Products
+    </h4>
+  </div>
   <% for(p of product){ %>
 
-  <div class="card my-3" style="width: 18rem;">
-    <img class="card-img-top w-50 h-25 mb-5" src='<%= p.image %>' alt="Card image cap">
+  <div class="card h-25 my-3" style="width: 18rem;">
+    <img class="card-img-top m-auto  my-1" src='<%= p.image %>' alt="Card image cap" style="height: 100px; width: 100px;">
     <div class="card-body">
       <h5 class="card-title mt-1">
         <%= p.title%>
         
       </h5>
-      <p class="card-text h-25 overflow-hidden">
+      <p class="card-text  "  style="
+      height: 7em;
+      overflow: hidden;
+      line-height: 22px;">
         <%= p.description %>
       </p>
      

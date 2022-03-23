@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <title>offer Project</title>
 
@@ -23,13 +24,14 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <%- style %>
   </head>
-  <body >
-    <nav class="navbar navbar-light bg-dark color- d-flex">
-        <div class="container d-flex jus">
-          <span class=" text-light mb-0 h1">offer</span>
-        </div>
-    </nav>
-    <div class="main">
+  <body class="text-center">
+
+  
+    <%if(locals.user){%>
+    <%- include('_navbar'); %>  
+    <%} %>
+    
+    <div class="main w-50 m-auto">
         <%- body %>
     </div>
     

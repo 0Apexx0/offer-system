@@ -1,34 +1,28 @@
 <link rel="stylesheet" href="../assets/css/login.css" />
-<div class="container d-flex justify-content-center mt-2">
-    <a class="btn btn-outline-dark" href="/user/all-offer/?uid=<%= user%>">Go back</a>
-    <a class=" btn btn-outline-dark mx-1" href="/user/signout">signout</a>
-  
-  </div>
-<div class="container">
-    <a class=" btn btn-outline-light" href="/user/signout">signout</a>
 
-</div>
-<div class="container text-center">
+<div class="d-flex justify-content-center align-items-center">
+    <div class="container text-center mt-3 ">
 
-    <img class="card-img-top w-25" src='<%= product.image %>' alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">
-            <%= product.title%>
-        </h5>
-        <p class="card-text">
-            <%= product.description %>
-            
-        </p>
-        <form action="/product/claim-product" method="POST">
-            <input name="id" type="text" class="form-control" value="<%=product.id%>" hidden/>
-            <input name="title" type="text" class="form-control"  value="<%=product.title%>" hidden/>
-            <input name="description" type="text" class="form-control"  value="<%=product.description%>" hidden />
-            <input name="image" type="text" class="form-control"  value="<%=product.image%>" hidden/>
-            <input name="claimBy" type="text" class="form-control"  value="<%= user %>" hidden/>
-            <input name="claimedProduct" type="text" class="form-control"  value="<%= product._id %>" hidden/>
-            <input class="btn btn-warning" type="submit" value="Claim offer" />
-            
-        </form>
+        <img class="card-img-top w-50" src='<%= product.image %>' alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">
+                <%= product.title%>
+            </h5>
+            <p class="card-text">
+                <%= product.description %>
+
+            </p>
+            <form action="/product/claim-product" method="POST">
+                <input name="id" type="text" class="form-control" value="<%=product.id%>" hidden />
+                <input name="title" type="text" class="form-control" value="<%=product.title%>" hidden />
+                <input name="description" type="text" class="form-control" value="<%=product.description%>" hidden />
+                <input name="image" type="text" class="form-control" value="<%=product.image%>" hidden />
+                <input name="claimBy" type="text" class="form-control" value="<%= user %>" hidden />
+                <input name="claimedProduct" type="text" class="form-control" value="<%= product._id %>" hidden />
+                <input class="btn btn-warning" type="submit" value="Claim offer" />
+
+            </form>
+        </div>
     </div>
 </div>
 
